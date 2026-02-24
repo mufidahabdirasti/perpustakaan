@@ -1,3 +1,4 @@
+ 
  <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
@@ -69,40 +70,59 @@
                         </div>
 
                         <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Total User</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                <?=mysqli_num_rows(mysqli_query($koneksi, 'SELECT*FROM user'));?>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <table class="table table-bordered">
-                                            <tr>
-                                                <td width="150"><strong>Nama</strong></td>
-                                                <td width="1">:</td>
-                                                <td width="200"><?= $_SESSION['user']['nama']; ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="150"><strong>Level User</strong></td>
-                                                <td width="1">:</td>
-                                                <td><?= $_SESSION['user']['level']; ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td width="150"><strong>Tanggal Login </strong></td>
-                                                <td width="1">:</td>
-                                                <td><?= date('d-m-Y'); ?></td>
-                                            </tr>
-                                            </table>
-                            </div>
-                        </div>
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                        Total User
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <?=mysqli_num_rows(mysqli_query($koneksi, 'SELECT*FROM user'));?>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div> <!-- penutup row 4 card -->
+
+<!-- =================== BAGIAN TABEL INFO USER (DIPISAH) =================== -->
+<!-- =================== BAGIAN TABEL INFO USER (DIPERKECIL) =================== -->
+<div class="row justify-content-center">
+    <div class="col-xl-6 col-md-8 col-sm-10">
+        <div class="card mb-4 mt-4">
+            <div class="card-header">
+                <h6 class="m-0 font-weight-bold text-primary">Informasi User</h6>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-sm">
+
+                    <tr>
+                        <td width="120"><strong>Nama</strong></td>
+                        <td width="10">:</td>
+                        <td><?= $_SESSION['user']['nama']; ?></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Level User</strong></td>
+                        <td>:</td>
+                        <td><?= $_SESSION['user']['level']; ?></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>Tanggal Login</strong></td>
+                        <td>:</td>
+                        <td><?= date('d-m-Y');?></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</footer>
